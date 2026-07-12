@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Gold Mania</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Joti+One&display=swap');
+    </style>
+</head>
+<body>
+<h1>Gold Mania</h1>
+
+<div id="infoPanel">
+    Current Player: Player<span id="currentPlayer">1</span> |
+    Time: <span id="timer">40</span>
+</div>
+
+<div id="player1_stats">
+    <b>Blue:</b>
+    Gold: <span id="gold_player1">100</span> |
+    Damage: <span id="dmg_player1">10</span> |
+    Movement: <span id="range_player1">1</span> |
+    Gold multiplier: <span id="multi_player1">1</span> |
+    Mines: <span id="mines_player1">1</span>
+</div>
+
+<div id="player2_stats"></div>
+    <b>Red:</b>
+    Gold: <span id="gold_player2">100</span> |
+    Damage: <span id="dmg_player2">10</span> |
+    Movement: <span id="range_player2">1</span> |
+    Gold multiplier: <span id="multi_player2">1</span> |
+    Mines: <span id="mines_player2">1</span>
+
+<div id="gameContainer">
+    <div id="gameRow">
+        <div id="shopWrapper">
+            <div id="shopPanel" class="hidden">
+                <h3>Shop</h3>
+                <label for="buySoldier">Soldier (50g):</label>
+                <input type="number" id="buySoldier" min="0" value="0"><br>
+
+                <label for="buyMiner">Miner (30g):</label>
+                <input type="number" id="buyMiner" min="0" value="0"><br>
+
+                <label for="buyScout">Scout (150g):</label>
+                <input type="number" id="buyScout" min="0" value="0"><br>
+
+                <button id="confirmBuy">Buy</button>
+                <button id="closeShop">Cancel</button>
+            </div>
+
+            <div id="upgradePanel" class="hidden">
+                <h3>Upgrade</h3>
+                <label for="upgradeMine">Upgrade mine? (50g):</label>
+                <input type="number" id="upgradeMine" min="0" value="0"><br>
+
+                <button id="confirmUpgrade">Buy</button>
+                <button id="closeUpgrade">Cancel</button>
+            </div>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+
+    <div id="controls">
+        <button id="endTurn">End Turn</button>
+        <button id="showInfo">Info</button>
+        <button id="saveGame">Save</button>
+        <button id="loadGame">Load</button>
+        <button id="newGame">New Game</button>
+    </div>
+
+    <div id="musicControls">
+        <label for="bgVolume">Music Volume:</label>
+        <input type="range" id="bgVolume" min="0" max="1" step="0.01" value="0.05">
+    </div>
+
+    <div id="speedOption">
+        <label for="gameSpeed">Turn Speed:</label>
+        <input type="number" id="gameSpeed" min="2" value="5">
+        <button id="saveSpeed">Confirm</button>
+    </div>
+</div>
+
+<div id="info" class="hidden">
+    <h3>How to Play</h3>
+    <p>Players take turns. Click on a field to move there.</p>
+    <p>If the distance is within your movement range, your unit moves and your turn ends.</p>
+    <p>Watch the timer! Your turn also ends automatically when time runs out (turn time can be adjusted).</p>
+    <p>Capture mines to generate gold each turn. You can capture enemy mines if your damage is high enough.</p>
+    <p>You can upgrade the health of your captured mines by moving onto them.</p>
+    <p>Return to your castle to upgrade damage, movement range, and gold multiplier.</p>
+    <p>To win, capture the enemy castle.</p>
+    <p>Keyboard shurtcuts: S - Save game, L - Load game, I - Hide/show info</p>
+    <p>Good luck and have fun!</p>
+</div>
+
+<div id="footer">
+    Made by: Kancsár Márk | Neptun: F0Q9LP
+</div>
+
+<audio id="bgMusic" src="assets/sounds/background.mp3" loop></audio>
+<audio id="clickSound" src="assets/sounds/click.wav"></audio>
+<script src="script.js"></script>
+</body>
+</html>
