@@ -1,1 +1,1 @@
-# GoldMania
+JQuery project for uni
